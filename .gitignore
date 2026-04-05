@@ -1,0 +1,22 @@
+# Compiled outputs
+*.o
+*.so
+*.a
+*.out
+*.sealed
+
+# Binary targets (keep source only)
+targets/patient_zero
+targets/patient_zero_waits
+
+# Temporary
+*.tmp
+*.log
+.DS_Store
+
+# Personal
+**/bob/
+
+# WSL artifacts
+*.exe
+GITIGNORE
