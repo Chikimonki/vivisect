@@ -1,22 +1,33 @@
 # Compiled outputs
-*.o
 *.so
+*.o
 *.a
-*.out
-*.sealed
+*.pyc
+__pycache__/
 
-# Binary targets (keep source only)
+# Binaries
 targets/patient_zero
 targets/patient_zero_waits
+targets/heap_uaf_final
+targets/symbolic_challenge
+targets/definitely_packable*
+targets/*.sealed
 
-# Temporary
-*.tmp
+# Exploits
+neural/exploit_*.py
+
+# Logs
 *.log
+oep_dump.bin
+unpacked_dump.bin
+trace.txt
+
+# Deployment
+deploy/
+
+# Docker
+.dockerignore
+
+# OS
 .DS_Store
-
-# Personal
-**/bob/
-
-# WSL artifacts
-*.exe
-GITIGNORE
+*.swp
