@@ -1,9 +1,4 @@
 # VIVISECT – Volume I
-## The INTP's Field Guide to Owning What You Never Compiled
-
-> "If you didn't compile it, you don't own it.  
-> If you didn't read the assembly, you don't understand it."  
-> — Jonathan Brossard, paraphrased and weaponized
 
 ### Tools Used
 - LuaJIT 2.1 + FFI
