@@ -1,46 +1,51 @@
-# VIVISECT – Volume I
+# VIVISECT
 
-### Tools Used
-- LuaJIT 2.1 + FFI
-- Zig 0.14.0
-- radare2, gdb+pwndbg, capstone, keystone
-- WSL2 Ubuntu 24.04
+Binary exploitation framework. LuaJIT + Zig.
 
-### Chapter 1 – First Blood
-ELF parsing with raw LuaJIT FFI  
-Binary patching 
-Sealing the source with `chmod 000`
+## Quick Start
 
-### Chapter 2 – LD_PRELOAD Hijacking
-`strcmp` always returns 0  
-9 lines of Zig + LD_PRELOAD = nuclear codes
+Open http://localhost:8080
 
-### Chapter  3 – GOT/PLT Patching
-Runtime memory manipulation  
-`ptrace` + LuaJIT FFI  
-Cross-process function pointer injection
+## Tools
 
-### Chapter 4 – Inline Hooking
-`xor eax,eax ; ret` → 3 bytes to rule them all  
-Patching `strcmp@plt` at 0x4010c0  
-Works on static binaries
+| Tool | What It Does |
+|------|-------------|
+| autohook | Runtime function hooking |
+| debugger | ptrace-based debugger |
+| tracer | Execution tracing + branch analysis |
+| unpack | Automatic binary unpacking |
+| rop_builder | ROP gadget finder |
+| auto_pwn | AI-assisted exploit generation |
 
-### Chapter 5 – The Universal Auto-Hooker
-One command. Any binary. Owned.  
-Automatic method selection  
-LD_PRELOAD → PLT → Inline fallback
+## Stack
 
-### Chapter 6 – Full Debugger in LuaJIT
-symbolic execution, memory search, automated unpacking
+- LuaJIT 2.1 (FFI, runtime scripting)
+- Zig 0.15.2 (implant compilation)
+- Capstone (disassembly)
+- ptrace (process control)
 
-### Final Arsenal
-You now possess techniques used by:
-- Nation-state APTs
-- Ransomware groups
-- Red teams
-- Malware researchers
-- Game cheat developers
+## Usage
+Analyze a binary
+cd neural && luajit auto_pwn.lua ../targets/binary
 
-Use wisely.
+Hook a process
+cd hooks && sudo luajit autohook.lua ../targets/binary strcmp
 
-**You have danger in your hands.**
+Debug a process
+cd hooks && sudo luajit debugger.lua <PID>
+
+Trace execution
+cd hooks && sudo luajit tracer.lua <PID>
+
+text
+
+
+## Requirements
+
+- Linux (WSL2 works)
+- LuaJIT 2.1+
+- Zig 0.15.2+
+
+## License
+
+MIT
