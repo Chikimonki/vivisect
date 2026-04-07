@@ -42,7 +42,7 @@ text
 
 ## Requirements
 
-- Linux (WSL2 works)
+- Linux (WSL2 Noble)
 - LuaJIT 2.1+
 - Zig 0.15.2+
 
